@@ -24,7 +24,7 @@ dynamic = ['version']
 dev = ["ruff", "pytest", "python-dotenv"]
 
 [project.urls]
-"Homepage" = "https://github.com/EvATive7Cloud/pushikoo-getter-gh"
+"Homepage" = "https://github.com/Pushikoo/pushikoo-getter-gh"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
