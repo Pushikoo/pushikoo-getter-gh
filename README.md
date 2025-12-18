@@ -1,13 +1,29 @@
 <div align="center">
 
-# pushikoo-adapter-testgetter
+# pushikoo-getter-gh
 
-TestGetter for pushikoo-adapter development as a template.
+GitHub getter adapter for Pushikoo. Monitors GitHub repository commits.
 
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
-[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Pushikoo/pushikoo-adapter-testgetter/package.yml)](https://github.com/Pushikoo/pushikoo-adapter-testgetter/actions)
-[![Python](https://img.shields.io/pypi/pyversions/pushikoo-adapter-testgetter)](https://pypi.org/project/pushikoo-adapter-testgetter)
-[![PyPI version](https://badge.fury.io/py/pushikoo-adapter-testgetter.svg)](https://pypi.org/project/pushikoo-adapter-testgetter)
-[![License](https://img.shields.io/github/license/Pushikoo/pushikoo-adapter-testgetter.svg)](https://pypi.org/project/pushikoo-adapter-testgetter/)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/EvATive7Cloud/pushikoo-getter-gh/package.yml)](https://github.com/EvATive7Cloud/pushikoo-getter-gh/actions)
+[![Python](https://img.shields.io/pypi/pyversions/pushikoo-getter-gh)](https://pypi.org/project/pushikoo-getter-gh)
+[![PyPI version](https://badge.fury.io/py/pushikoo-getter-gh.svg)](https://pypi.org/project/pushikoo-getter-gh)
+[![License](https://img.shields.io/github/license/EvATive7Cloud/pushikoo-getter-gh.svg)](https://pypi.org/project/pushikoo-getter-gh/)
 
 </div>
+
+## Configuration
+
+### Adapter Config
+
+| Field  | Type             | Default           | Description                                                   |
+| ------ | ---------------- | ----------------- | ------------------------------------------------------------- |
+| `auth` | `dict[str, str]` | `{"default": ""}` | GitHub API tokens. Key is the token name, value is the token. |
+
+### Instance Config
+
+| Field    | Type   | Default     | Description                                              |
+| -------- | ------ | ----------- | -------------------------------------------------------- |
+| `repo`   | `str`  | Required    | Repository path, e.g. `EvATive7Cloud/pushikoo-getter-gh` |
+| `commit` | `bool` | `true`      | Enable commit monitoring                                 |
+| `auth`   | `str`  | `"default"` | Token name to use from adapter config                    |

@@ -8,18 +8,23 @@ classifiers = [
   "Programming Language :: Python :: 3",
   "Operating System :: OS Independent",
 ]
-dependencies = ["pushikoo-interface>=0.2.0", "requests", "loguru"]
-description = "TestGetter for pushikoo-adapter development as a template."
-name = "pushikoo-adapter-testgetter"
+dependencies = [
+  "pushikoo-interface>=0.2.0",
+  "requests",
+  "loguru",
+  "python-dateutil",
+]
+description = "GitHub getter adapter for Pushikoo."
+name = "pushikoo-getter-gh"
 readme = "README.md"
 requires-python = ">=3.10"
 dynamic = ['version']
 
 [project.optional-dependencies]
-dev = ["ruff", "pytest"]
+dev = ["ruff", "pytest", "python-dotenv"]
 
 [project.urls]
-"Homepage" = "https://github.com/Pushikoo/pushikoo-adapter-testgetter"
+"Homepage" = "https://github.com/EvATive7Cloud/pushikoo-getter-gh"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
@@ -33,5 +38,4 @@ version_scheme = "post-release"
 local_scheme = "node-and-date"
 
 [project.entry-points."pushikoo.adapter"]
-# TODO: Define your adapter export point here
-testgetter = "pushikoo_adapter_testgetter:TestGetter"
+github = "pushikoo_getter_gh:GithubGetter"
