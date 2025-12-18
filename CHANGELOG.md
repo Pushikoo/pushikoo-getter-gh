@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/Pushikoo/pushikoo-getter-gh/compare/v0.1.0...v0.1.1) (2025-12-18)
+
+
+### Documentation
+
+* Update GitHub organization and repository references in README and CHANGELOG. ([c4a62aa](https://github.com/Pushikoo/pushikoo-getter-gh/commit/c4a62aa5d64037b4b1a532686f7befa8414d279a))
+
 ## 0.1.0 (2025-12-18)
 
 ### Features
