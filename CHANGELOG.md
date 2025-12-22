@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/Pushikoo/pushikoo-getter-gh/compare/v0.1.1...v0.1.2) (2025-12-22)
+
+
+### Bug Fixes
+
+* trigger ci ([5d74f98](https://github.com/Pushikoo/pushikoo-getter-gh/commit/5d74f98c3562b1ab466c2dc0866ea68594a2b0ab))
+
 ## [0.1.1](https://github.com/Pushikoo/pushikoo-getter-gh/compare/v0.1.0...v0.1.1) (2025-12-18)
 
 
