@@ -12,18 +12,20 @@ class GithubGetter(Getter[AdapterConfig, InstanceConfig]):
     """GitHub commits getter adapter."""
 
     def __init__(self) -> None:
-        # Get the token from adapter config using instance config key
-        token_key = self.instance_config.auth
-        token = self.config.auth.get(token_key, "")
-
-        self.api = GitHubAPIClient(
-            token=token if token else None,
-            proxies=self.ctx.get_proxies(),
-        )
         self._commit_cache: dict[str, dict] = {}
         self.repo = self.instance_config.repo
 
         logger.debug(f"{self.adapter_name}.{self.identifier} initialized for repo {self.repo}")
+
+    def _create_api(self) -> GitHubAPIClient:
+        """Create API client instance with current config (supports hot-reload)."""
+        # Get the token from adapter config using instance config key
+        token_key = self.instance_config.auth
+        token = self.config.auth.get(token_key, "")
+        return GitHubAPIClient(
+            token=token if token else None,
+            proxies=self.ctx.get_proxies(),
+        )
 
     def timeline(self) -> list[str]:
         """Fetch commit list and return SHA identifiers."""
@@ -31,7 +33,8 @@ class GithubGetter(Getter[AdapterConfig, InstanceConfig]):
             logger.debug(f"Commit monitoring disabled for {self.identifier}")
             return []
 
-        commits = self.api.get_commits(self.repo)
+        api = self._create_api()
+        commits = api.get_commits(self.repo)
 
         # Cache commits for detail retrieval
         self._commit_cache.clear()
